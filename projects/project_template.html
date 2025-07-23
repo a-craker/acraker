@@ -1,137 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Project Title | Aidan Craker</title>
-    <meta name="description" content="Aidan Craker Portfolio Project Page" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Title | Aidan Craker</title>
+  <meta name="description" content="Aidan Craker Portfolio Project Page" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="../img/ac_logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/media.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
-      crossorigin="anonymous"
-    />
-    <script type="module" src="../js/main.js" defer></script>
-  </head>
+  <link rel="shortcut icon" href="../img/ac_logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/media.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+    crossorigin="anonymous"
+  />
+  <script type="module" src="../js/main.js" defer></script>
 
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container container-lg">
-        <div class="header-nav">
-          <a href="../index.html#home" class="logo" data-aos="fade-down">A.Craker</a>
-          <nav class="nav">
-            <ul class="nav-list" data-aos="fade-down">
-              <li class="nav-item"><a href="../index.html#home" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="../index.html#projects" class="nav-link">Works</a></li>
-              <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+  <style>
+    .project-header {
+      margin-top: 5rem;
+      text-align: center;
+    }
 
-    <!-- Main Content -->
-    <main class="project-detail container container-lg">
-      <section class="project-header" data-aos="fade-up">
-        <h1 class="title">Project Title</h1>
-        <p class="project-subtitle">
-          A brief project description — your one-liner elevator pitch. <br />
-          <a href="https://github.com/a-craker/project-repo" target="_blank">View the code on GitHub</a>
-        </p>
-        <img src="../img/works/01.jpg" alt="Project preview image" class="project-header-image" />
-      </section>
+    .project-overview {
+      margin: 3rem auto;
+      max-width: 800px;
+      text-align: center;
+    }
 
-      <section class="project-content">
-        <div class="project-section" data-aos="fade-up">
-          <h2>Background</h2>
-          <p>
-            Give context: what problem were you solving? What was the scope? Who was it for? Include any key collaborators.
-          </p>
-        </div>
+    .project-overview img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+    }
 
-        <div class="project-section" data-aos="fade-up" data-aos-delay="100">
-          <h2>Approach</h2>
-          <p>
-            Describe how you tackled the problem. What tools, data, frameworks, or design methods did you use?
-          </p>
-        </div>
+    .project-details-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
 
-        <div class="project-section" data-aos="fade-up" data-aos-delay="200">
-          <h2>Technologies Used</h2>
-          <ul class="project-tags">
-            <li>Python</li>
-            <li>Pandas</li>
-            <li>Power BI</li>
-            <li>PostgreSQL</li>
+    .project-gallery {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .gallery-item img, .gallery-item iframe {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .image-caption {
+      margin-top: 0.8rem;
+      display: block;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container container-lg">
+      <div class="header-nav">
+        <a href="../index.html#home" class="logo" data-aos="fade-down">A.Craker</a>
+        <nav class="nav">
+          <ul class="nav-list" data-aos="fade-down">
+            <li class="nav-item"><a href="../index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="../index.html#projects" class="nav-link">Works</a></li>
+            <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
           </ul>
-        </div>
-
-        <div class="project-section" data-aos="fade-up" data-aos-delay="300">
-          <h2>Key Insights / Outcomes</h2>
-          <ul>
-            <li>Summarize major results, discoveries, or performance outcomes</li>
-            <li>Highlight what made this project impactful or unique</li>
-          </ul>
-        </div>
-
-        <div class="project-section" data-aos="fade-up" data-aos-delay="400">
-          <h2>Gallery</h2>
-          <div class="project-gallery">
-            <div class="gallery-image-container half-width">
-              <img src="../img/works/01.jpg" class="gallery-image" />
-              <span class="image-caption">Image caption explaining what is shown</span>
-            </div>
-            <div class="gallery-image-container half-width">
-              <img src="../img/works/02.jpg" class="gallery-image" />
-              <span class="image-caption">Another image and caption</span>
-            </div>
-            <div class="gallery-image-container">
-              <img src="../img/works/03.jpg" class="gallery-image" />
-              <span class="image-caption">Full-width image with caption</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-section" data-aos="fade-up" data-aos-delay="500">
-          <a href="../index.html#projects" class="btn btn-red">← Back to Projects</a>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-row">
-          <div class="social-links-row footer-social">
-            <a href="https://github.com/a-craker" target="_blank">
-              <img src="../img/social_icons/github.svg" alt="GitHub" />
-            </a>
-            <a href="https://www.linkedin.com/in/aidan-craker-205061193/" target="_blank">
-              <img src="../img/social_icons/linkedin.svg" alt="LinkedIn" />
-            </a>
-            <a href="mailto:aidan.craker@gmail.com">
-              <img src="../img/social_icons/mail.svg" alt="Email Aidan" />
-            </a>
-          </div>
-        </div>
+        </nav>
       </div>
-    </footer>
-
-    <div id="goToTop" class="goToTop">
-      <a href="#top"><img src="../img/icons/arrow_up.svg" alt="Back to top" /></a>
     </div>
+  </header>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <!-- Main Content -->
+  <main class="project-detail container container-lg">
+    <section class="project-header" data-aos="fade-up">
+      <h1 class="title">Finance Dashboard</h1>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview" data-aos="fade-up">
+      <p>
+        A dynamic Power BI dashboard created for financial reporting across three business units. This dashboard automated monthly variance reporting and introduced self-service visual analytics to non-technical teams.
+        <br><br>
+        <a href="https://github.com/a-craker/finance-dashboard" target="_blank">View on GitHub</a>
+      </p>
+      <img src="../img/projects/finance-dashboard-hero.jpg" alt="Finance Dashboard Preview">
+    </section>
+
+    <!-- Project Details -->
+    <section id="project-details">
+      <div class="subheader-text" style="text-align:center;">Project Details</div>
+      <div class="project-details-content">
+        <div class="body-text" data-aos="fade-up">
+          This project addressed the fragmentation and time delay in financial variance reporting by centralizing data sources and enabling automated visual reporting.
+        </div>
+        <div class="body-text" data-aos="fade-up" data-aos-delay="100">
+          Using Power BI, SQL and Python ETL scripts, the pipeline was automated end-to-end. Stakeholders could interact with live reports segmented by department, region, and financial period.
+        </div>
+        <div class="body-text" data-aos="fade-up" data-aos-delay="200">
+          The dashboard reduced manual reporting effort by 70% and improved decision cycle time from 5 days to less than 24 hours.
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="project-gallery">
+      <div class="subheader-text" style="text-align:center;">Gallery</div>
+
+      <!-- Widget/Image 1 -->
+      <div class="gallery-item" data-aos="fade-up">
+        <img src="../img/projects/dashboard-overview.jpg" alt="Dashboard Overview">
+        <span class="image-caption">Overview page showing dynamic filters, KPI cards and variance summaries across all business units.</span>
+      </div>
+
+      <!-- Widget/Image 2 -->
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+        <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+        <span class="image-caption">Demo walkthrough of dashboard interactions (replace with iframe/embed or remove if not needed).</span>
+      </div>
+
+      <!-- Widget/Image 3 -->
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+        <img src="../img/projects/data-pipeline-diagram.jpg" alt="ETL Architecture">
+        <span class="image-caption">ETL architecture mapping source systems to Power BI via Python and SQL pipelines.</span>
+      </div>
+    </section>
+
+    <!-- Back to Projects Button -->
+    <section style="text-align:center; margin: 4rem 0;">
+      <a href="../index.html#projects" class="btn btn-red">← Back to Projects</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <div class="social-links-row footer-social">
+          <a href="https://github.com/a-craker" target="_blank">
+            <img src="../img/social_icons/github.svg" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/aidan-craker-205061193/" target="_blank">
+            <img src="../img/social_icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+          <!-- Removed email icon as requested -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="goToTop" class="goToTop">
+    <a href="#top"><img src="../img/icons/arrow_up.svg" alt="Back to top" /></a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</body>
 </html>
-
