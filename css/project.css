@@ -32,8 +32,21 @@
   text-align: center;
 }
 
-.gallery-item img, .gallery-item iframe {
+.gallery-item img,
+.gallery-item iframe {
   max-width: 100%;
   border-radius: 8px;
 }
 
+.subheader-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 3rem 0 1rem;
+}
+
+.body-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: #333;
+}
