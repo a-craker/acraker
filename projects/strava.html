@@ -86,25 +86,48 @@
     <!-- Gallery -->
     <section class="project-gallery">
       <h2 class="subheader-text" data-aos="fade-up">Gallery</h2>
-
-      <!-- Widget/Image 1 -->
+    
+      <!-- Widget 1: Embedded Interactive 3D Map -->
       <div class="gallery-item" data-aos="fade-up">
-        <img src="../img/project_content/strava/ctct_2025.html" alt="Dashboard Overview">
-        <div class="body-text">Overview page showing dynamic filters, KPI cards and variance summaries across all business units.</div>
+        <iframe
+          src="../img/project_content/strava/ctct_2025.html"
+          width="100%"
+          height="500px"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+        <div class="body-text">
+          Interactive 3D map rendered from Strava GPX data using custom WebGL overlays and elevation-based coloring.
+        </div>
+        <div class="body-text" style="margin-top: 1rem;">
+          <a href="../img/project_content/strava/ctct_2025.html" target="_blank" class="btn btn-white">
+            View Fullscreen
+          </a>
+        </div>
       </div>
-
-      <!-- Widget/Image 2 -->
+    
+      <!-- Widget 2: YouTube Embed -->
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-        <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
-        <div class="body-text">Demo walkthrough of dashboard interactions (replace with iframe/embed or remove if not needed).</div>
+        <iframe
+          src="https://www.youtube.com/embed/your-video-id"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <div class="body-text">
+          Demo walkthrough of dashboard interactions (replace with iframe/embed or remove if not needed).
+        </div>
       </div>
-
-      <!-- Widget/Image 3 -->
+    
+      <!-- Widget 3: Static Image -->
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
         <img src="../img/projects/data-pipeline-diagram.jpg" alt="ETL Architecture">
-        <div class="body-text">ETL architecture mapping source systems to Power BI via Python and SQL pipelines.</div>
+        <div class="body-text">
+          ETL architecture mapping source systems to Power BI via Python and SQL pipelines.
+        </div>
       </div>
     </section>
+
 
     <!-- Back to Projects Button -->
     <section style="text-align:center; margin: 4rem 0;">
