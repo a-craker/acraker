@@ -6,13 +6,21 @@
 .project-overview {
   margin: 3rem auto;
   max-width: 800px;
-  text-align: center;
 }
 
-.project-overview img {
+.project-overview-text {
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.project-overview-image {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.project-overview-image img {
   max-width: 100%;
   height: auto;
-  margin-top: 1.5rem;
   border-radius: 8px;
 }
 
@@ -20,6 +28,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  text-align: left;
 }
 
 .project-gallery {
