@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="../img/ac_logo.png" type="image/x-icon" />
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="../css/media.css" />
+  <link rel="stylesheet" href="../css/project.css" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
@@ -16,54 +17,6 @@
     crossorigin="anonymous"
   />
   <script type="module" src="../js/main.js" defer></script>
-
-  <style>
-    .project-header {
-      margin-top: 5rem;
-      text-align: center;
-    }
-
-    .project-overview {
-      margin: 3rem auto;
-      max-width: 800px;
-      text-align: center;
-    }
-
-    .project-overview img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 1.5rem;
-      border-radius: 8px;
-    }
-
-    .project-details-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    .project-gallery {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .gallery-item {
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-
-    .gallery-item img, .gallery-item iframe {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-
-    .image-caption {
-      margin-top: 0.8rem;
-      display: block;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
 </head>
 
 <body>
@@ -96,7 +49,10 @@
         STRAVA offers an amazing suite of visual metrics ranging from heart rate and pace to some pretty awesome rendered GPS activity maps. 
         While many of these insights sit behind a fairly steep paywall, STRAVA's API gives user direct access to their own data. This project
         taps into that opportunity, using custom-built visualisations and activity assessments to generate perspectives that even the premium
-        subscription doesn't offer. This project features a growing collection of custom visualisations based on my own activity data. I'll be
+        subscription doesn't offer.
+      </p>
+      <p>
+        This project features a growing collection of custom visualisations based on my own activity data. I'll be
         updating it regularly as my activity log grows. Stay tuned for a fully integrated activity dashboard that will bring all my activities
         together!
         <br><br>
@@ -107,7 +63,7 @@
 
     <!-- Project Details -->
     <section id="project-details">
-      <div class="subheader-text" style="text-align:center;">Project Details</div>
+      <h2 class="subheader-text" data-aos="fade-up">Project Details</h2>
       <div class="project-details-content">
         <div class="body-text" data-aos="fade-up">
           This project addressed the fragmentation and time delay in financial variance reporting by centralizing data sources and enabling automated visual reporting.
@@ -123,24 +79,24 @@
 
     <!-- Gallery -->
     <section class="project-gallery">
-      <div class="subheader-text" style="text-align:center;">Gallery</div>
+      <h2 class="subheader-text" data-aos="fade-up">Gallery</h2>
 
       <!-- Widget/Image 1 -->
       <div class="gallery-item" data-aos="fade-up">
         <img src="../img/projects/dashboard-overview.jpg" alt="Dashboard Overview">
-        <span class="image-caption">Overview page showing dynamic filters, KPI cards and variance summaries across all business units.</span>
+        <div class="body-text">Overview page showing dynamic filters, KPI cards and variance summaries across all business units.</div>
       </div>
 
       <!-- Widget/Image 2 -->
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
         <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
-        <span class="image-caption">Demo walkthrough of dashboard interactions (replace with iframe/embed or remove if not needed).</span>
+        <div class="body-text">Demo walkthrough of dashboard interactions (replace with iframe/embed or remove if not needed).</div>
       </div>
 
       <!-- Widget/Image 3 -->
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
         <img src="../img/projects/data-pipeline-diagram.jpg" alt="ETL Architecture">
-        <span class="image-caption">ETL architecture mapping source systems to Power BI via Python and SQL pipelines.</span>
+        <div class="body-text">ETL architecture mapping source systems to Power BI via Python and SQL pipelines.</div>
       </div>
     </section>
 
@@ -161,7 +117,6 @@
           <a href="https://www.linkedin.com/in/aidan-craker-205061193/" target="_blank">
             <img src="../img/social_icons/linkedin.svg" alt="LinkedIn" />
           </a>
-          <!-- Removed email icon as requested -->
         </div>
       </div>
     </div>
@@ -171,6 +126,10 @@
     <a href="#top"><img src="../img/icons/arrow_up.svg" alt="Back to top" /></a>
   </div>
 
+  <!-- AOS Animation Init -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

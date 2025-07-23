@@ -1,0 +1,39 @@
+.project-header {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.project-overview {
+  margin: 3rem auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.project-overview img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+}
+
+.project-details-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.project-gallery {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.gallery-item img, .gallery-item iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
