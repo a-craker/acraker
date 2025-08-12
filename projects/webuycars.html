@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>STRAVA | Aidan Craker</title>
+  <meta name="description" content="Aidan Craker Portfolio Project Page" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon" href="../img/ac_logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/media.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+    crossorigin="anonymous"
+  />
+  <script type="module" src="../js/main.js" defer></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container container-lg">
+      <div class="header-nav">
+        <a href="../index.html#home" class="logo" data-aos="fade-down">A.Craker</a>
+        <nav class="nav">
+          <ul class="nav-list" data-aos="fade-down">
+            <li class="nav-item"><a href="../index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="project-detail container container-lg">
+    <section class="project-header" data-aos="fade-up">
+      <h1 class="title">WeBuyCars Exploratory Data Analysis</h1>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview" data-aos="fade-up">
+      <div class="project-overview-text">
+        <p>
+          This project presents a brief exploratory data analysis of 31,851 cars listed on WeBuyCars, scraped between 25 February and 23 April 2025. The analysis
+          examines the market composition, geographical distribution of stock, as well as price and mileage patterns by make. Finally, it assesses the relationship 
+          between key features and price, ultimately making use of a random forest to identify key drivers of vehicle pricing across different price thresholds. 
+        </p>
+      </div>
+      <div class="project-overview-text">
+        <p>
+          This brief EDA covers active listings that were present on the <a href="https://www.webuycars.co.za/buy-a-car" target="_blank">WeBuyCars</a> website over 
+          the 2 month scraping period. It provides a concise breakdown of the available data and highlights insights I was particularly interested in exploring. 
+          <br><br>
+          <a href="https://github.com/a-craker/finance-dashboard" target="_blank">View on GitHub</a>
+        </p>
+      </div>
+    </section>
+
+
+    <!-- Market Breakdown -->
+    <section id="market-breakdown">
+      <div class="project-details-content">
+        <h2 class="subheader-text" data-aos="fade-up">Market Breakdown</h2>
+
+      <div class="project-overview-image"> #change css for specific image (make smaller)
+        <img src="../img/project_content/strava/{INSERT MARKET COMPOSITION}.png" alt="Market Composition">
+      </div>
+
+        <div class="body-text" data-aos="fade-up">
+          The listings on WeBuyCars are skewed towards a few makes. The top ten car makes account for 68% of all listings over the scrape period. 
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Where Buy Cars? -->
+    <section id="provincial-distribution">
+      <div class="project-details-content">
+        <h2 class="subheader-text" data-aos="fade-up">Where Buy Cars?</h2>
+
+      <div class="project-overview-image"> #change css for specific image (make smaller)
+        <img src="../img/project_content/webuycars/car_provinces.jpg" alt="Provincial Distribution">
+      </div>
+
+        <div class="body-text" data-aos="fade-up">
+          70% of the inventory is listed in Gauteng and the Western Cape, with Gauteng representing almost half of the WeBuyCars' total inventory. Makes sense given that the once historic Coca-Cola Dome
+          is now home to more than XXXX cars from WeBuy Cars <a href="https://github.com/marcusvolz/strava" target="_blank">Coca-Cola Dome Factual</a>. WeBuyCars currently doesn't operate in
+          both the Free State and Northern Cape, although that may be subject to change given the second-hand dealers growing popularity and market share. 
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Price and Mileage -->
+    <section id="price-mileage-distributions">
+      <div class="project-details-content">
+        <h2 class="subheader-text" data-aos="fade-up">Price and Mileage Distributions</h2>
+        
+        <div class="project-overview-image"> #change css for specific image (make smaller)
+          <img src="../img/project_content/strava/{INSERT RIDGE PLOTS}.png" alt="Price-Mileage Distributions">
+        </div>
+        
+        <div class="body-text" data-aos="fade-up">
+          Wide variation in both - premium brands tend to have higher median prices, but also show wider spreads.
+        </div>
+        
+        <div class="body-text" data-aos="fade-up"> 
+          While mileage skews lower for new market entrants, most brands exhibit the suspected 'used-car pyramid' - a base of high mileage vehicles tapering to low-mileage outliers.
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    <!-- Four Key Features -->
+###### hexbin - full page plot ######
+    The classic depreciation curve: price falls sharply in the first 100,000 km, then flattens
+
+###### boxplot (year vs price - full page plot) ######
+    Model year remains a powerful price anchor — even within the same mileage band
+
+###### GVM vs Price - binned medians - half page ######
+    Heavier vehicles, often bakkies and SUVs, carry a noticeable price premium
+
+###### service history vs price - binned medians - half page ######
+    Better ervice history status shows a clear uplift in the median price. 
+
+    <!-- Random Forest -->
+    <section id="variable-importance">
+      <div class="project-details-content">
+        <h2 class="subheader-text" data-aos="fade-up">Feature Importance</h2>
+
+        <div class="body-text" data-aos="fade-up">
+          Interpretation of variable importance. NB on methodology and interpretation - use CODERA explanation for thresholds
+        </div>
+        
+        <div class="project-overview-image"> #change css for specific image (make smaller)
+          <img src="../img/project_content/strava/{INSERT VARIABLE IMPORTANCE}.png" alt="Variable-Importance">
+        </div>
+        
+        <div class="body-text" data-aos="fade-up">
+          Across price thresholds from R60k to R1m, year and gross vehicle mass consistently top the list. Mileage dominates below R250k, but plays a smaller role at the luxury end where model-specific 
+          attributes and tank-size take over. 
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Back to Projects Button -->
+    <section style="text-align:center; margin: 4rem 0;">
+      <a href="../index.html#projects" class="btn btn-red">← Back to Projects</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <div class="social-links-row footer-social">
+          <a href="https://github.com/a-craker" target="_blank">
+            <img src="../img/social_icons/github.svg" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/aidan-craker-205061193/" target="_blank">
+            <img src="../img/social_icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="goToTop" class="goToTop">
+    <a href="#top"><img src="../img/icons/arrow_up.svg" alt="Back to top" /></a>
+  </div>
+
+  <!-- AOS Animation Init -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
