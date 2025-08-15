@@ -57,7 +57,7 @@
           This brief EDA covers active listings that were present on the <a href="https://www.webuycars.co.za/buy-a-car" target="_blank">WeBuyCars</a> website over 
           the 2 month scraping period. It provides a concise breakdown of the available data and highlights insights I was particularly interested in exploring. 
           <br><br>
-          <a href="https://github.com/a-craker/finance-dashboard" target="_blank">View on GitHub</a>
+          <a href="https://github.com/a-craker/webuycars.git" target="_blank">View on GitHub</a>
         </p>
       </div>
     </section>
@@ -86,7 +86,7 @@
         <h2 class="subheader-text" data-aos="fade-up">Where Buy Cars?</h2>
 
       <div class="project-overview-image"> #change css for specific image (make smaller)
-        <img src="../img/project_content/webuycars/car_provinces.jpg" alt="Provincial Distribution">
+        <img src="../img/project_content/webuycars/car_provinces.jpg" alt="Provincial-Distribution">
       </div>
 
         <div class="body-text" data-aos="fade-up">
@@ -99,13 +99,33 @@
     </section>
 
 
-    <!-- Price and Mileage -->
+    <!-- Price and Mileage-->
     <section id="price-mileage-distributions">
       <div class="project-details-content">
         <h2 class="subheader-text" data-aos="fade-up">Price and Mileage Distributions</h2>
         
         <div class="project-overview-image"> #change css for specific image (make smaller)
-          <img src="../img/project_content/strava/{INSERT RIDGE PLOTS}.png" alt="Price-Mileage Distributions">
+          <img src="../img/project_content/webuycars/price_vs_mileage_hexbin.png" alt="Price-Mileage-Distributions">
+        </div>
+        
+        <div class="body-text" data-aos="fade-up">
+          The classic depreciation curve: price falls sharply in the first 100,000 km, then flattens
+        </div>
+        
+        <div class="body-text" data-aos="fade-up"> 
+          Where are the hexes getting HOT
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Price and Mileage by Make-->
+    <section id="price-mileage-make-distributions">
+      <div class="project-details-content">
+        <h2 class="subheader-text" data-aos="fade-up">Price and Mileage Distributions by Make</h2>
+        
+        <div class="project-overview-image"> #change css for specific image (make smaller)
+          <img src="../img/project_content/webuycars/price_milage_dis.png" alt="Price-Mileage-Distributions">
         </div>
         
         <div class="body-text" data-aos="fade-up">
@@ -118,20 +138,34 @@
         
       </div>
     </section>
+
+    <!-- Makes and Mileage-->
+    <section id="makes-and-mileage-boxplots">
+      <div class="project-details-content">
+        <h2 class="subheader-text" data-aos="fade-up">Which Makes Have the Lowest Mileage</h2>
+        
+        <div class="project-overview-image"> #change css for specific image (make smaller)
+          <img src="../img/project_content/webuycars/mileage_make_boxplot.png" alt="Make-Mileage-Boxplots">
+        </div>
+        
+        <div class="body-text" data-aos="fade-up">
+          Something about the cars with the lowest mileage
+        </div>
+        
+        <div class="body-text" data-aos="fade-up"> 
+          Something about the cars with the lowest mileage
+        </div>
+        
+      </div>
+    </section>
     
     
     <!-- Four Key Features -->
-###### hexbin - full page plot ######
-    The classic depreciation curve: price falls sharply in the first 100,000 km, then flattens
-
-###### boxplot (year vs price - full page plot) ######
-    Model year remains a powerful price anchor — even within the same mileage band
-
-###### GVM vs Price - binned medians - half page ######
-    Heavier vehicles, often bakkies and SUVs, carry a noticeable price premium
+###### Year vs Price ######
+    The price of cars falls sharply the older the car is 
 
 ###### service history vs price - binned medians - half page ######
-    Better ervice history status shows a clear uplift in the median price. 
+    Better service history status shows a clear uplift in the median price. 
 
     <!-- Random Forest -->
     <section id="variable-importance">
@@ -143,7 +177,7 @@
         </div>
         
         <div class="project-overview-image"> #change css for specific image (make smaller)
-          <img src="../img/project_content/strava/{INSERT VARIABLE IMPORTANCE}.png" alt="Variable-Importance">
+          <img src="../img/project_content/webuycars/variable_importance_plots.png" alt="Variable-Importance">
         </div>
         
         <div class="body-text" data-aos="fade-up">
