@@ -51,7 +51,7 @@
           examines the market composition, geographical distribution of stock, as well as price and mileage patterns by make. Finally, it assesses the relationship 
           between key features and price, ultimately making use of a random forest to identify key drivers of vehicle pricing across different price thresholds. 
         </p>
-        <br><br>
+        <br>
         <p>
           This brief EDA covers active listings that were present on the <a href="https://www.webuycars.co.za/buy-a-car" target="_blank">WeBuyCars</a> website over 
           the 2 month scraping period. It provides a concise breakdown of the available data and highlights insights I was particularly interested in exploring. 
@@ -72,7 +72,7 @@
       </div>
 
         <div class="body-text" data-aos="fade-up">
-          The listings on WeBuyCars are skewed towards a few makes. The top ten car makes account for 68% of all listings over the scrape period. 
+          The top 10 brands account for 68% of all listings, showing that the used car market on WeBuyCars is concentrated around a handful of popular makes.  
         </div>
 
       </div>
@@ -89,9 +89,9 @@
       </div>
 
         <div class="body-text" data-aos="fade-up">
-          70% of the inventory is listed in Gauteng and the Western Cape, with Gauteng representing almost half of the WeBuyCars' total inventory. Makes sense given that the once historic Coca-Cola Dome
-          is now home to more than 1,500 cars inside the <a href="https://mybroadband.co.za/news/motoring/500395-webuycars-bought-the-dome-for-r175-million.html" target="_blank">WeBuyCars Dome</a>. WeBuyCars 
-          currently doesn't operate in both the Free State and Northern Cape, although that may be subject to change given the second-hand dealers growing popularity and market share. 
+          70% of WeBuyCars' scraped inventory is concentrated in Gauteng and the Western Cape with Gauteng making up nearly half of all listings. Gauteng's dominance isn't surprising given that the once-iconic
+          Coca-Cola Dome now, now the <a href="https://mybroadband.co.za/news/motoring/500395-webuycars-bought-the-dome-for-r175-million.html" target="_blank">WeBuyCars Dome</a>, houses more than 1,500 vehicles and
+          interestingly sells approximately 2,000 vehicles per month from the flagship. Notably, the scraped data showed no stock in the Northern Cape or Free State.  
         </div>
 
       </div>
@@ -108,13 +108,10 @@
         </div>
         
         <div class="body-text" data-aos="fade-up">
-          The classic depreciation curve: price falls sharply in the first 100,000 km, then flattens
+          The negative relationship between price and mileage is clear. Most cars cluster between 100k-200k km and R100k-R250k, while vehicles beyond 300k km see prices bottom out - with only a few high-end models 
+          resisting typical depreciation. For buyers, this middle band is the sweet spot, with lower prices and cars that haven't yet crossed into 'end-of-life' mileage. 
         </div>
-        
-        <div class="body-text" data-aos="fade-up"> 
-          Where are the hexes getting HOT
-        </div>
-        
+
       </div>
     </section>
 
@@ -128,13 +125,11 @@
         </div>
         
         <div class="body-text" data-aos="fade-up">
-          Wide variation in both - premium brands tend to have higher median prices, but also show wider spreads.
+          Mileage and price distributions are skewed rightward: most cars sit below 200k km and under R300k, but long tails emerge from high-mileage cars and premium models. Toyotas and Nissans
+          often appear at higiher mileage, indicating durability, while brands like BMW and Mercedes dominate the upper price ranges despite modest mileage. The ridgeplots underscore two parallel
+          markets, one driven by durability and the other by luxury. 
         </div>
-        
-        <div class="body-text" data-aos="fade-up"> 
-          While mileage skews lower for new market entrants, most brands exhibit the suspected 'used-car pyramid' - a base of high mileage vehicles tapering to low-mileage outliers.
-        </div>
-        
+
       </div>
     </section>
 
@@ -148,11 +143,10 @@
         </div>
         
         <div class="body-text" data-aos="fade-up">
-          Something about the cars with the lowest mileage
-        </div>
-        
-        <div class="body-text" data-aos="fade-up"> 
-          Something about the cars with the lowest mileage
+          Mileage varies noticeably across makes. Popular brands like Toyota and Nissan show higher median mileage, reinforcing their reputation for durability and a long service life, while 
+          luxry brands such as BMW and Mercedes demonstrate tighter mileage ranges, suggesting they're sold off earlier before the heavy wear and tear. This contrast reinforces the trends shown
+          by the ridgeplots, illustrating two distinct ownership patterns: durability foxued buyers who drive cars longer, and luxry owners who tend to trade out sooner, keeping average mileage
+          lower. 
         </div>
         
       </div>
