@@ -181,9 +181,10 @@
             </div>
             <div class="body-text chart-explainer">
               <strong>Service History</strong> 
-                - Median prices clearly differ depending on service history. Cars with a 'complete and up-to-date' record unsurprisingly fetch the highest prices, while thos 'complete but due' trade at slightly lower levels. 
+                - Median prices clearly differ depending on service history. Cars with a 'complete, up todate' record unsurprisingly fetch the highest prices, while thos 'complete but due' trade at slightly lower levels. 
                 Vehicles with no service history record see a marked drop in median value, indicating how much trust and resale confidence hinges on documented maintenance. Even after excluding cars with missing fields, it's a
-                clear trend that service history is an important indicator of price.Median prices rise with documentation quality: “complete & up-to-date” commands the highest values, “complete but due” trades slightly lower, and “no record” sees a marked drop. (Empty service-history fields were excluded.)
+                clear trend that service history is an important indicator of price.Median prices rise with documentation quality: “complete & up-to-date” commands the highest values, “complete but due” trades slightly lower, and 
+                “no record” sees a marked drop (Empty service-history fields were excluded).
             </div>
           </article>
         </div>
@@ -197,7 +198,7 @@
 
         <div class="body-text" data-aos="fade-up">
           Identifying key price drivers is critical for both buyers and sellers. To achieve this, I trained a series of Random Forest classifiers in R using the <a href="https://cran.r-project.org/web/packages/ranger/index.html" target="_blank">Ranger Package</a> 
-          to identify which features best predict whether a veichle's price exceeds 6 different thresholds (R60k-R1m). Variable importance scores were then extrated to compare which factors consistently matter most across differnt price thresholds.
+          to identify which features best predict whether a veichle's price exceeds 6 different thresholds (R60k-R1m). Variable importance scores were then extrated to compare which factors consistently matter most across different price thresholds.
         </div>
         
         <div class="project-overview-image"> 
@@ -206,13 +207,13 @@
         
         <div class="body-text" data-aos="fade-up">
         <p>
-          The chart shows relative importance scores for each feature at different thresholds. Taller bars indicate features that help the model in distinguishing cars above or below a given price line.
+          The chart shows relative importance scores for each feature at different price thresholds. Taller bars indicate features that help the model in distinguishing cars above or below a given price line.
           It's important to note that these are not causal effect or exact price impacts, but rather signals of which attributes are most useful for classication at that cutoff.
         </p>
       <br>
         <p>
-          Age and mileage are the strongest and most consistent drivers of price, reflecting the same trends found in earlier sections. Make and model become increasingly decisive at higher thresholds, where brand luxury positing pushes
-          price upward. Vehicle size proxies such as gross vehicle mass (GVM) gain importance in the more expensive bands, while service history adds some values but lags behind key indicators like age and mileage. Notably, mileage plays a
+          Age and mileage are the strongest and most consistent drivers of price, reflecting the same trends found in earlier sections. Make and model become increasingly decisive at higher thresholds, where brand luxury pushes
+          price upward. Vehicle size proxies such as gross vehicle mass (GVM) gain importance in the more expensive bands, while service history adds some value but lags behind key indicators like age and mileage. Notably, mileage plays a
           smaller role at the lower end of the market, but low mileage becomes a strong differentiator once prices move past the R500k mark. 
         </p>
         </div>
