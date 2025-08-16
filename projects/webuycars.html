@@ -155,10 +155,54 @@
     
     <!-- Four Key Features -->
 ###### Year vs Price ######
-    The price of cars falls sharply the older the car is 
+    Vehicle prices follow a predictable depreciation curve. A sharp decline in the first 10 years, then a flatting as cars age further. Once a car cross the decade mark, age becomes less of a differentiator - 
+    at that point other features matter more (we'll be looking into this kind of variable importance in the coming section). This pattern demonstrates a typical car value lifecycle, where the biggest hit comes
+    early, and older vehicles settle into a stable, low-value band. The labels at the end of each bar represent the number of car listings captured in that year. 
 
 ###### service history vs price - binned medians - half page ######
-    Better service history status shows a clear uplift in the median price. 
+    Median prices clearly differ depending on service history. Cars with a 'complete and up-to-date' record unsurprisingly fetch the highest prices, while thos 'complete but due' trade at slightly lower levels. 
+    Vehicles with no service history record see a marked drop in median value, indicating how much trust and resale confidence hinges on documented maintenance. Even after excluding cars with missing fields, it's a
+    clear trend that service history is an important indicator of price. 
+
+    <!-- Year vs Price & Service History -->
+    <section id="year-and-service">
+      <div class="project-details-content">
+        <h2 class="subheader-text" style="text-align:center" data-aos="fade-up">
+          Depreciation & The Price Premium of Service History
+        </h2>
+      
+        <div class="chart-pair" data-aos="fade-up">
+          <!-- Chart card 1 -->
+          <article class="chart-card">
+            <div class="project-overview-image">
+              <img src="../img/project_content/webuycars/year_price.png" alt="Price by Year">
+            </div>
+            <div class="body-text chart-explainer">
+              <strong>Price by Year</strong>
+              Vehicle prices follow a predictable depreciation curve. A sharp decline in the first 10 years, then a flatting as cars age further. Once a car cross the decade mark, age becomes less of a differentiator - 
+              at that point other features matter more (we'll be looking into this kind of variable importance in the coming section). This pattern demonstrates a typical car value lifecycle, where the biggest hit comes
+              early, and older vehicles settle into a stable, low-value band. The labels at the end of each bar represent the number of car listings captured in that year.
+            </div>
+          </article>
+        
+          <!-- Chart card 2 -->
+          <article class="chart-card">
+            <div class="project-overview-image">
+              <img src="../img/project_content/webuycars/service_price.png" alt="Median Price by Service History">
+            </div>
+            <div class="body-text chart-explainer">
+              <strong>Service History</strong> 
+                Median prices clearly differ depending on service history. Cars with a 'complete and up-to-date' record unsurprisingly fetch the highest prices, while thos 'complete but due' trade at slightly lower levels. 
+                Vehicles with no service history record see a marked drop in median value, indicating how much trust and resale confidence hinges on documented maintenance. Even after excluding cars with missing fields, it's a
+                clear trend that service history is an important indicator of price.Median prices rise with documentation quality: “complete & up-to-date” commands the highest values, “complete but due” trades slightly lower, and “no record” sees a marked drop. (Empty service-history fields were excluded.)
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
 
     <!-- Random Forest -->
     <section id="variable-importance">

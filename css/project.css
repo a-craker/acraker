@@ -68,3 +68,43 @@ iframe {
   border-radius: 8px;
   border: none;
 }
+
+/* Two-up chart layout */
+.chart-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;               /* space between the two cards */
+  margin-top: 1rem;
+}
+
+/* Keep charts within page borders and consistent with your page rhythm */
+.chart-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--card-border, #e6e6e6);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Keep your existing image wrapper but ensure images scale cleanly */
+.project-overview-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Optional: tame very tall images */
+  max-height: 520px;
+  object-fit: contain;
+}
+
+/* Explainer sits under its chart and aligns to same width */
+.chart-explainer {
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Desktop: go side-by-side while respecting page borders */
+@media (min-width: 900px) {
+  .chart-pair {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
