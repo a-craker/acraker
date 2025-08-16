@@ -69,42 +69,36 @@ iframe {
   border: none;
 }
 
-/* Two-up chart layout */
-.chart-pair {
+/* Let the chart section break out of the usual narrow content column */
+#year-and-service .chart-pair {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.75rem;               /* space between the two cards */
-  margin-top: 1rem;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1600px;     /* Wider than normal page content */
+  padding: 0 1rem;       /* Small padding for safety */
 }
 
-/* Keep charts within page borders and consistent with your page rhythm */
-.chart-card {
+/* Chart cards get more breathing room */
+#year-and-service .chart-card {
   background: var(--card-bg, #fff);
   border: 1px solid var(--card-border, #e6e6e6);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
-/* Keep your existing image wrapper but ensure images scale cleanly */
-.project-overview-image img {
+/* Make images scale up gracefully */
+#year-and-service .project-overview-image img {
   width: 100%;
   height: auto;
   display: block;
-  /* Optional: tame very tall images */
-  max-height: 520px;
+  max-height: none;      /* remove previous restriction */
   object-fit: contain;
 }
 
-/* Explainer sits under its chart and aligns to same width */
-.chart-explainer {
-  margin-top: 0.75rem;
-  line-height: 1.5;
-}
-
-/* Desktop: go side-by-side while respecting page borders */
+/* Desktop: two big charts side by side */
 @media (min-width: 900px) {
-  .chart-pair {
+  #year-and-service .chart-pair {
     grid-template-columns: 1fr 1fr;
-    align-items: start;
   }
 }
