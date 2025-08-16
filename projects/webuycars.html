@@ -67,7 +67,7 @@
       <div class="project-details-content">
         <h2 class="subheader-text" data-aos="fade-up">Market Breakdown</h2>
 
-      <div class="project-overview-image"> #change css for specific image (make smaller)
+      <div class="project-overview-image"> 
         <img src="../img/project_content/webuycars/most_listed.png" alt="Market Composition">
       </div>
 
@@ -84,7 +84,7 @@
       <div class="project-details-content">
         <h2 class="subheader-text" data-aos="fade-up">Where Buy Cars?</h2>
 
-      <div class="project-overview-image"> #change css for specific image (make smaller)
+      <div class="project-overview-image"> 
         <img src="../img/project_content/webuycars/car_provinces.jpg" alt="Provincial-Distribution">
       </div>
 
@@ -103,7 +103,7 @@
       <div class="project-details-content">
         <h2 class="subheader-text" data-aos="fade-up">Price and Mileage Distributions</h2>
         
-        <div class="project-overview-image"> #change css for specific image (make smaller)
+        <div class="project-overview-image"> 
           <img src="../img/project_content/webuycars/price_vs_mileage_hexbin.png" alt="Price-Mileage-Distributions">
         </div>
         
@@ -120,7 +120,7 @@
       <div class="project-details-content">
         <h2 class="subheader-text" data-aos="fade-up">Price and Mileage Distributions by Make</h2>
         
-        <div class="project-overview-image"> #change css for specific image (make smaller)
+        <div class="project-overview-image"> 
           <img src="../img/project_content/webuycars/price_milage_dis.png" alt="Price-Mileage-Distributions">
         </div>
         
@@ -138,7 +138,7 @@
       <div class="project-details-content">
         <h2 class="subheader-text" data-aos="fade-up">Which Makes Have the Lowest Mileage</h2>
         
-        <div class="project-overview-image"> #change css for specific image (make smaller)
+        <div class="project-overview-image"> 
           <img src="../img/project_content/webuycars/mileage_make_boxplot.png" alt="Make-Mileage-Boxplots">
         </div>
         
@@ -152,19 +152,8 @@
       </div>
     </section>
     
-    
-    <!-- Four Key Features -->
-###### Year vs Price ######
-    Vehicle prices follow a predictable depreciation curve. A sharp decline in the first 10 years, then a flatting as cars age further. Once a car cross the decade mark, age becomes less of a differentiator - 
-    at that point other features matter more (we'll be looking into this kind of variable importance in the coming section). This pattern demonstrates a typical car value lifecycle, where the biggest hit comes
-    early, and older vehicles settle into a stable, low-value band. The labels at the end of each bar represent the number of car listings captured in that year. 
-
-###### service history vs price - binned medians - half page ######
-    Median prices clearly differ depending on service history. Cars with a 'complete and up-to-date' record unsurprisingly fetch the highest prices, while thos 'complete but due' trade at slightly lower levels. 
-    Vehicles with no service history record see a marked drop in median value, indicating how much trust and resale confidence hinges on documented maintenance. Even after excluding cars with missing fields, it's a
-    clear trend that service history is an important indicator of price. 
-
-    <!-- Year vs Price & Service History -->
+  
+    <!-- Key Features -->
     <section id="year-and-service">
       <div class="project-details-content">
         <h2 class="subheader-text" style="text-align:center" data-aos="fade-up">
@@ -201,16 +190,14 @@
       </div>
     </section>
 
-
-
-
     <!-- Random Forest -->
     <section id="variable-importance">
       <div class="project-details-content">
         <h2 class="subheader-text" data-aos="fade-up">Feature Importance</h2>
 
         <div class="body-text" data-aos="fade-up">
-          Interpretation of variable importance. NB on methodology and interpretation - use CODERA explanation for thresholds
+          Identifying key price drivers is critical for both buyers and sellers. To achieve this, I trained a series of Random Forest classifiers in R using the <a href="https://cran.r-project.org/web/packages/ranger/index.html" target="_blank">Ranger Package</a> 
+          to identify which features best predict whether a veichle's price exceeds 6 different thresholds (R60k-R1m). Variable importance scores were then extrated to compare which factors consistently matter most across differnt price thresholds.
         </div>
         
         <div class="project-overview-image"> #change css for specific image (make smaller)
@@ -218,8 +205,16 @@
         </div>
         
         <div class="body-text" data-aos="fade-up">
-          Across price thresholds from R60k to R1m, year and gross vehicle mass consistently top the list. Mileage dominates below R250k, but plays a smaller role at the luxury end where model-specific 
-          attributes and tank-size take over. 
+        <p>
+          The chart shows relative importance scores for each feature at different thresholds. Taller bars indicate features that help the moedl in distinguishing cars aboce or below a given price line.
+          It's important to note that these are not causal effect or exact price impacts, but rather signals of which attributes are most useful for classication at that cutoff.
+        </p>
+      <br>
+        <p>
+          Age and mileage are the strongest and most consistent drivers of price, reflecting the same trends found in earlier sections. Make and model become increasingly decisive at higher thresholds, where brand luxury positing pushes
+          price upward. Vehicle size proxies such as gross vehicle mass (GVM) gain importance in the more expensive bands, while service history adds some values but lags behind key indicators like age and mileage. Notably, mileage plays a
+          smaller role at the lower end of the market, but low mileage becomes a strong differentiator once prices move past the R500k mark. 
+        </p>
         </div>
         
       </div>

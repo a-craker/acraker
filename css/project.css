@@ -69,36 +69,68 @@ iframe {
   border: none;
 }
 
-/* Let the chart section break out of the usual narrow content column */
+/* --- Make the chart grid full-bleed and wider than your normal content --- */
 #year-and-service .chart-pair {
+  /* break out of the page container */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  /* spacing + layout */
+  box-sizing: border-box;
+  padding: 0 2rem;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin: 2rem auto;
-  max-width: 1600px;     /* Wider than normal page content */
-  padding: 0 1rem;       /* Small padding for safety */
+  grid-template-columns: 1fr;      /* stack on mobile */
+  gap: 2.5rem;
 }
 
-/* Chart cards get more breathing room */
+/* If any ancestor clips, stop it. */
+#year-and-service,
+#year-and-service .project-details-content {
+  overflow: visible;
+}
+
+/* Let the section heading stay inside normal borders */
+#year-and-service .subheader-text {
+  max-width: var(--content-max, 1100px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Big, comfy cards */
 #year-and-service .chart-card {
-  background: var(--card-bg, #fff);
+  padding: 2rem;
+  border-radius: 10px;
   border: 1px solid var(--card-border, #e6e6e6);
-  border-radius: 8px;
-  padding: 1.5rem;
+  background: var(--card-bg, #fff);
 }
 
-/* Make images scale up gracefully */
+/* Make images grow; nuke any global caps */
+#year-and-service .project-overview-image,
 #year-and-service .project-overview-image img {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+}
+
+#year-and-service .project-overview-image img {
   display: block;
-  max-height: none;      /* remove previous restriction */
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;  /* prevents small/tall clamps */
   object-fit: contain;
 }
 
-/* Desktop: two big charts side by side */
-@media (min-width: 900px) {
+/* Desktop: two LARGE charts side-by-side */
+@media (min-width: 960px) {
   #year-and-service .chart-pair {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(560px, 1fr) minmax(560px, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* Ultra-wide screens: keep it tasteful (optional) */
+@media (min-width: 1600px) {
+  #year-and-service .chart-pair {
+    padding-left: max(2rem, calc((100vw - 1600px) / 2));
+    padding-right: max(2rem, calc((100vw - 1600px) / 2));
   }
 }
