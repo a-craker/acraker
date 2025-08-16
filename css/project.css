@@ -69,6 +69,22 @@ iframe {
   border: none;
 }
 
+/* --- RANDOM FOREST CHART ENLARGEMENT --- */
+/* Make the variable importance image larger for readability */
+#variable-importance .project-overview-image {
+  max-width: 1200px;   /* wider than your normal content column */
+  margin: 2rem auto;   /* keep it centered */
+}
+
+#variable-importance .project-overview-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: none;    /* no artificial clamp */
+  object-fit: contain;
+}
+
+/* --- CHART CARDS FOR WEBUYCARS --- */
 /* --- Make the chart grid full-bleed and wider than your normal content --- */
 #year-and-service .chart-pair {
   /* break out of the page container */
