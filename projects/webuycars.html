@@ -126,7 +126,7 @@
         
         <div class="body-text" data-aos="fade-up">
           Mileage and price distributions are skewed rightward: most cars sit below 200k km and under R300k, but long tails emerge from high-mileage cars and premium models. Toyotas and Nissans
-          often appear at higiher mileage, indicating durability, while brands like BMW and Mercedes dominate the upper price ranges despite modest mileage. The ridgeplots underscore two parallel
+          often appear at higher mileage, indicating durability, while brands like BMW and Mercedes dominate the upper price ranges despite modest mileage. The ridgeplots underscore two parallel
           markets, one driven by durability and the other by luxury. 
         </div>
 
@@ -167,7 +167,7 @@
             </div>
             <div class="body-text chart-explainer">
               <strong>Price by Year</strong>
-              - Vehicle prices follow a predictable depreciation curve. A sharp decline in the first 10 years, then a flatting as cars age further. Once a car cross the decade mark, age becomes less of a differentiator - 
+              - Vehicle prices follow a predictable depreciation curve. A sharp decline in the first 10 years, then flattening as cars age further. Once a car cross the decade mark, age becomes less of a differentiator - 
               at that point other features matter more (we'll be looking into this kind of variable classification in the coming random forest section). This pattern demonstrates a typical car value lifecycle, where the biggest hit comes
               early, and older vehicles settle into a stable, low-value band. The labels at the end of each bar represent the number of car listings captured in that year.
             </div>
@@ -183,7 +183,7 @@
                 - Median prices clearly differ depending on service history. Cars with a 'complete, up to date' record unsurprisingly fetch the highest prices, while those with 'complete but due' trade at slightly lower levels. 
                 Vehicles with no service history record see a marked drop in median value, indicating how much trust and resale confidence hinges on documented maintenance. Even after excluding cars with missing fields, it's a
                 clear trend that service history is an important indicator of price. Median prices rise with documentation quality: “complete, up to date” commands the highest values, “complete but due” trades slightly lower, and 
-                “no record” sees a marked drop (Empty service-history fields were excluded).
+                “no record” sees a marked drop (empty service-history fields were excluded).
             </div>
           </article>
         </div>
@@ -197,7 +197,7 @@
 
         <div class="body-text" data-aos="fade-up">
           Identifying key price drivers is critical for both buyers and sellers. To achieve this, I trained a series of Random Forest classifiers in R using the <a href="https://cran.r-project.org/web/packages/ranger/index.html" target="_blank">Ranger Package</a> 
-          to identify which features best predict whether a veichle's price exceeds 6 different thresholds (R60k-R1m). Variable importance scores were then extrated to compare which factors consistently matter most across different price thresholds.
+          to identify which features best predict whether a vehicle's price exceeds 6 different thresholds (R60k-R1m). Variable importance scores were then extracted to compare which factors consistently matter most across different price thresholds.
         </div>
         
         <div class="project-overview-image"> 
@@ -207,7 +207,7 @@
         <div class="body-text" data-aos="fade-up">
         <p>
           The chart shows relative importance scores for each feature at different price thresholds. Taller bars indicate features that help the model in distinguishing cars above or below a given price line.
-          It's important to note that these are not causal effect or exact price impacts, but rather signals of which attributes are most useful for classication at that cutoff.
+          It's important to note that these are not causal effects or exact price impacts, but rather signals of which attributes are most useful for classication at that cutoff.
         </p>
       <br>
         <p>
