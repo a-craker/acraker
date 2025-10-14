@@ -150,7 +150,6 @@
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }));
 
   map.on("load", () => {
-    // Route layer
     map.addLayer({
       id: "route-line",
       type: "line",
@@ -159,9 +158,9 @@
       paint: { "line-color": "#fbe16d", "line-width": 6 }
     });
 
-    // -------- Smooth orbit around map center --------
-    const DEG_PER_SEC = 6;          // rotation speed
-    const RESUME_AFTER_MS = 4000;   // idle time before auto-rotate resumes
+    // --- Smooth orbit around centre ---
+    const DEG_PER_SEC = 6;        // rotation speed
+    const RESUME_AFTER_MS = 4000; // idle before auto-rotate resumes
     let rotating = true;
     let lastTs = 0;
     let resumeTimer = null;
@@ -170,13 +169,11 @@
       if (!rotating) { requestAnimationFrame(orbit); return; }
       if (lastTs) {
         const elapsed = (ts - lastTs) / 1000;
-        const next = map.getBearing() + DEG_PER_SEC * elapsed; // incremental, no wrap snap
+        const nextBearing = map.getBearing() + DEG_PER_SEC * elapsed;
         map.easeTo({
-          bearing: next,
+          bearing: nextBearing,     // incremental, no snapping
           duration: 0,
-          // keep the orbit around the current center
-          // 'around' defaults to center, included here for clarity
-          around: "center"
+          around: map.getCenter()   // valid LngLat, keeps orbit around centre
         });
       }
       lastTs = ts;
@@ -190,12 +187,14 @@
       resumeTimer = setTimeout(() => { rotating = true; }, RESUME_AFTER_MS);
     }
 
+    // Pause on any user interaction
     ["mousedown","dragstart","wheel","touchstart","movestart","pitchstart","rotatestart","zoomstart"]
       .forEach(ev => map.on(ev, pauseOrbitTemporarily));
 
     requestAnimationFrame(orbit);
   });
 </script>
+
 
 
 
