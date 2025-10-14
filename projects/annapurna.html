@@ -111,7 +111,7 @@
 <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
 <script>
   const MAPTILER_KEY = "blcNGuPM8YRJyLOpy5al";
-  const ROUTE_URL = "../img/project_content/annapurna_circuit/annapurna_simple.geojson"; // adjust if needed
+  const ROUTE_URL = "../img/project_content/annapurna_circuit/annapurna_simple.geojson";
 
   const map = new maplibregl.Map({
     container: "map",
@@ -140,15 +140,17 @@
       layers: [{ id: "basemap", type: "raster", source: "basemap" }],
       terrain: { source: "terrain", exaggeration: 1.3 }
     },
-    center: [84.35, 28.52],  // tweak to your route's midpoint if needed
-    zoom: 9,               // increase for closer start
+    center: [84.35, 28.52],
+    zoom: 9,
     pitch: 60,
+    bearing: 0,
     hash: true
   });
 
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }));
 
   map.on("load", () => {
+    // Route layer
     map.addLayer({
       id: "route-line",
       type: "line",
@@ -156,12 +158,46 @@
       layout: { "line-join": "round", "line-cap": "round" },
       paint: { "line-color": "#fbe16d", "line-width": 6 }
     });
+
+    // --- Camera rotation ---
+    const DEG_PER_SEC = 6;           // rotation speed
+    const RESUME_AFTER_MS = 5000;    // idle time before auto-rotate resumes
+    let rotating = true;
+    let lastTime = 0;
+    let resumeTimer = null;
+
+    function rotateCamera(ts) {
+      if (!rotating) {
+        requestAnimationFrame(rotateCamera);
+        return;
+      }
+      if (lastTime) {
+        const elapsed = (ts - lastTime) / 1000.0;
+        const bearing = (map.getBearing() + DEG_PER_SEC * elapsed) % 360;
+        // duration 0 is key for smooth per-frame update
+        map.rotateTo(bearing, { duration: 0 });
+      }
+      lastTime = ts;
+      requestAnimationFrame(rotateCamera);
+    }
+
+    // Stop on interaction
+    function stopRotationTemporarily() {
+      rotating = false;
+      lastTime = 0;
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => { rotating = true; }, RESUME_AFTER_MS);
+    }
+
+    // Common interaction events
+    ["mousedown", "dragstart", "wheel", "touchstart", "movestart", "pitchstart", "rotatestart", "zoomstart"].forEach(ev =>
+      map.on(ev, stopRotationTemporarily)
+    );
+
+    // Start loop
+    requestAnimationFrame(rotateCamera);
   });
 </script>
-
-
-
-
 
 
     <!-- Back to Projects Button -->
