@@ -159,45 +159,44 @@
       paint: { "line-color": "#fbe16d", "line-width": 6 }
     });
 
-    // --- Camera rotation ---
-    const DEG_PER_SEC = 6;           // rotation speed
-    const RESUME_AFTER_MS = 5000;    // idle time before auto-rotate resumes
+    // -------- Smooth orbit around map center --------
+    const DEG_PER_SEC = 6;          // rotation speed
+    const RESUME_AFTER_MS = 4000;   // idle time before auto-rotate resumes
     let rotating = true;
-    let lastTime = 0;
+    let lastTs = 0;
     let resumeTimer = null;
 
-    function rotateCamera(ts) {
-      if (!rotating) {
-        requestAnimationFrame(rotateCamera);
-        return;
+    function orbit(ts) {
+      if (!rotating) { requestAnimationFrame(orbit); return; }
+      if (lastTs) {
+        const elapsed = (ts - lastTs) / 1000;
+        const next = map.getBearing() + DEG_PER_SEC * elapsed; // incremental, no wrap snap
+        map.easeTo({
+          bearing: next,
+          duration: 0,
+          // keep the orbit around the current center
+          // 'around' defaults to center, included here for clarity
+          around: "center"
+        });
       }
-      if (lastTime) {
-        const elapsed = (ts - lastTime) / 1000.0;
-        const bearing = (map.getBearing() + DEG_PER_SEC * elapsed) % 360;
-        // duration 0 is key for smooth per-frame update
-        map.rotateTo(bearing, { duration: 0 });
-      }
-      lastTime = ts;
-      requestAnimationFrame(rotateCamera);
+      lastTs = ts;
+      requestAnimationFrame(orbit);
     }
 
-    // Stop on interaction
-    function stopRotationTemporarily() {
+    function pauseOrbitTemporarily() {
       rotating = false;
-      lastTime = 0;
+      lastTs = 0;
       if (resumeTimer) clearTimeout(resumeTimer);
       resumeTimer = setTimeout(() => { rotating = true; }, RESUME_AFTER_MS);
     }
 
-    // Common interaction events
-    ["mousedown", "dragstart", "wheel", "touchstart", "movestart", "pitchstart", "rotatestart", "zoomstart"].forEach(ev =>
-      map.on(ev, stopRotationTemporarily)
-    );
+    ["mousedown","dragstart","wheel","touchstart","movestart","pitchstart","rotatestart","zoomstart"]
+      .forEach(ev => map.on(ev, pauseOrbitTemporarily));
 
-    // Start loop
-    requestAnimationFrame(rotateCamera);
+    requestAnimationFrame(orbit);
   });
 </script>
+
 
 
     <!-- Back to Projects Button -->
