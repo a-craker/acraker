@@ -143,8 +143,8 @@
     center: [84.35, 28.52],
     zoom: 9,
     pitch: 60,
-    bearing: 0,
-    hash: true
+    bearing: 0
+    // remove hash: true to avoid per-frame URL updates that cause jitter
   });
 
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }));
@@ -158,23 +158,26 @@
       paint: { "line-color": "#fbe16d", "line-width": 6 }
     });
 
-    // --- Smooth orbit around centre ---
-    const DEG_PER_SEC = 6;        // rotation speed
-    const RESUME_AFTER_MS = 4000; // idle before auto-rotate resumes
+    // --- Smooth continuous orbit around the centre ---
+    const DEG_PER_SEC = 4;           // slower feels like video
+    const RESUME_AFTER_MS = 3500;    // idle time before auto-rotate resumes
     let rotating = true;
     let lastTs = 0;
     let resumeTimer = null;
 
     function orbit(ts) {
       if (!rotating) { requestAnimationFrame(orbit); return; }
+
       if (lastTs) {
         const elapsed = (ts - lastTs) / 1000;
-        const nextBearing = map.getBearing() + DEG_PER_SEC * elapsed;
-        map.easeTo({
-          bearing: nextBearing,     // incremental, no snapping
-          duration: 0,
-          around: map.getCenter()   // valid LngLat, keeps orbit around centre
-        });
+        const delta = DEG_PER_SEC * elapsed;
+        // setBearing applies an immediate tiny step, no shortest-path snap
+        map.setBearing(map.getBearing() + delta);
+        // keep pitch steady for a stable “video” feel
+        // optional gentle bob: uncomment the next 3 lines
+        // const basePitch = 60, amp = 1.5, period = 9000;
+        // const bob = amp * Math.sin((2 * Math.PI * ts) / period);
+        // map.setPitch(basePitch + bob);
       }
       lastTs = ts;
       requestAnimationFrame(orbit);
@@ -191,9 +194,14 @@
     ["mousedown","dragstart","wheel","touchstart","movestart","pitchstart","rotatestart","zoomstart"]
       .forEach(ev => map.on(ev, pauseOrbitTemporarily));
 
+    // Respect prefers-reduced-motion
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (media.matches) rotating = false;
+
     requestAnimationFrame(orbit);
   });
 </script>
+
 
 
 
