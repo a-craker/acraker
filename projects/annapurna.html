@@ -67,6 +67,23 @@
       </div>
     </section>
 
+        <!-- Elevation Profile -->
+    <section id="elevation_profile">
+      <div class="project-details-content">
+        <h2 class="subheader-text" data-aos="fade-up">Elevation Profile</h2>
+
+      <div class="project-overview-image"> 
+        <img src="../img/project_content/annapurna_circuit/annapurna_elevation.png" alt="Elevation Profile">
+      </div>
+
+        <div class="body-text" data-aos="fade-up">
+          Elevation profile overlayed with the villages we stayed in. The little injured man around the 5km mark is where I managed to eat shit, break my hand and bust open my leg.
+          Thankfully, the village doctor at the Chame health post was able to patch me up and send me on my way for the way for the rest of the circuit.
+        </div>
+
+      </div>
+    </section>
+
         <!-- Facets -->
     <section id="year-and-service">
       <div class="project-details-content">
@@ -111,7 +128,7 @@
 <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
 <script>
   const MAPTILER_KEY = "blcNGuPM8YRJyLOpy5al";
-  const ROUTE_URL = "../img/project_content/annapurna_circuit/annapurna_simple.geojson";
+  const ROUTE_URL = "../img/project_content/annapurna_circuit/annapurna_simple.geojson"; // adjust if needed
 
   const map = new maplibregl.Map({
     container: "map",
@@ -140,11 +157,10 @@
       layers: [{ id: "basemap", type: "raster", source: "basemap" }],
       terrain: { source: "terrain", exaggeration: 1.3 }
     },
-    center: [84.35, 28.52],
-    zoom: 9,
+    center: [84.35, 28.52],  // tweak to your route's midpoint if needed
+    zoom: 9,                 // increase for closer start
     pitch: 60,
-    bearing: 0
-    // remove hash: true to avoid per-frame URL updates that cause jitter
+    hash: true
   });
 
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }));
@@ -157,50 +173,9 @@
       layout: { "line-join": "round", "line-cap": "round" },
       paint: { "line-color": "#fbe16d", "line-width": 6 }
     });
-
-    // --- Smooth continuous orbit around the centre ---
-    const DEG_PER_SEC = 4;           // slower feels like video
-    const RESUME_AFTER_MS = 3500;    // idle time before auto-rotate resumes
-    let rotating = true;
-    let lastTs = 0;
-    let resumeTimer = null;
-
-    function orbit(ts) {
-      if (!rotating) { requestAnimationFrame(orbit); return; }
-
-      if (lastTs) {
-        const elapsed = (ts - lastTs) / 1000;
-        const delta = DEG_PER_SEC * elapsed;
-        // setBearing applies an immediate tiny step, no shortest-path snap
-        map.setBearing(map.getBearing() + delta);
-        // keep pitch steady for a stable “video” feel
-        // optional gentle bob: uncomment the next 3 lines
-        // const basePitch = 60, amp = 1.5, period = 9000;
-        // const bob = amp * Math.sin((2 * Math.PI * ts) / period);
-        // map.setPitch(basePitch + bob);
-      }
-      lastTs = ts;
-      requestAnimationFrame(orbit);
-    }
-
-    function pauseOrbitTemporarily() {
-      rotating = false;
-      lastTs = 0;
-      if (resumeTimer) clearTimeout(resumeTimer);
-      resumeTimer = setTimeout(() => { rotating = true; }, RESUME_AFTER_MS);
-    }
-
-    // Pause on any user interaction
-    ["mousedown","dragstart","wheel","touchstart","movestart","pitchstart","rotatestart","zoomstart"]
-      .forEach(ev => map.on(ev, pauseOrbitTemporarily));
-
-    // Respect prefers-reduced-motion
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (media.matches) rotating = false;
-
-    requestAnimationFrame(orbit);
   });
 </script>
+
 
 
 
