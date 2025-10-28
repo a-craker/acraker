@@ -40,7 +40,7 @@
   <!-- Main Content -->
   <main class="project-detail container container-lg">
     <section class="project-header" data-aos="fade-up">
-      <h1 class="title">Annapurna Circuit </h1>
+      <h1 class="title">The Annapurna Circuit </h1>
     </section>
 
     <!-- Project Overview -->
@@ -56,13 +56,13 @@
         the world, which gives the route its reputation for serious but achievable adventure.
     </p>
     <h2 class="subheader-text" data-aos="fade-up">Our Trek, the Stats and the Trail</h2>
-    <p>
+        <p>
             This page is a geospatial and analytical take on my Annapurna Circuit trek. It pulls together the bits I found most interesting, ties the numbers to the places they 
             happened, all while including some accounts of memorable events. 
         <br><br>
             It includes interactive route maps alongside clear, static visuals that pin key moments and metrics to place. The aim is to pair location with numbers so the trek 
             reads as a story, not a pile of stats.    
-          <br><br>
+        <br><br>
           <a href="https://github.com/a-craker/webuycars.git" target="_blank">View on GitHub</a>
         </p>
       </div>
@@ -89,22 +89,32 @@
     <section id="time_ridgeplot">
       <div class="project-details-content">
         <h2 class="subheader-text" data-aos="fade-up">When Were We Walking?</h2>
-
-      <div class="project-overview-image"> 
-        <img src="../img/project_content/annapurna_circuit/time_ridgeplot.png" alt="Elevation Profile">
-      </div>
-
-        <div class="body-text" data-aos="fade-up">
-          From Day 1 at the bottom, each ridgeplot highlights when we completed the bulk of each day’s distance.The pattern varies with elevation and how leisurely we took 
-          the day, but you can see a common pattern: a strong morning push followed by a similar effort to finish.
+        
+        <div class="project-overview-image"> 
+            <img src="../img/project_content/annapurna_circuit/time_ridgeplot.png" alt="Elevation Profile">
         </div>
-
-      </div>
+        
+        <div class="body-text" data-aos="fade-up">
+            From Day 1 at the bottom, each ridgeplot highlights when we completed the bulk of each day’s distance.The pattern varies with elevation and how leisurely we took 
+            the day, but you can see a common pattern: a strong morning push followed by a similar effort to finish.
+        </div>
+        
+    </div>
     </section>
 
 
-        <!-- Map styles -->
-    <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+<!-- Map styles -->
+<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+    <h2 class="subheader-text" data-aos="fade-up">Interactive 3D Map</h2>
+        <div class="body-text" data-aos="fade-up">
+            This is a 3D, browser-based map of a section of the Annapurna Circuit, built with MapLibre GL JS, the open-source WebGL engine for vector tiles. 
+            It overlays the route we walked on shaded terrain and adds a point layer for each village where we stayed. With terrain enabled you can tilt, rotate 
+            and zoom to read the relief properly, see ridgelines and valleys, and pick out details like contour spacing, switchbacks and river beds. 
+            <br><br>  
+            It is granular enough to show the little spur to Ice Lake where Spike and I held a stone-skipping contest, the zigzag ascent to Thorung La Pass, 
+            and the contemplatory-shuffle along the riverbed near Jomsom when we realised we would need to wade a stream and get our boots soaked. It captures 
+            the wrong turns and hiccups as well as the big views. 
+        </div>
     <section class="mapwrap" style="margin:2rem 0">
       <div id="map" style="height:60vh;min-height:420px;border-radius:8px"></div>
     </section>
@@ -187,33 +197,28 @@
     
     </script>
 
-    <!-- Facets -->
-<section id="year-and-service">
+<!-- Strava -->
+<section id="strava">
   <div class="project-details-content">
-    <h2 class="subheader-text" style="text-align:center" data-aos="fade-up">
-      Elevation and Route Profile Facets
-    </h2>
+    <h2 class="subheader-text" data-aos="fade-up">Strava Activity</h2>
 
-    <div class="chart-pair" data-aos="fade-up">
-      <!-- Chart card 2 -->
-      <article class="chart-card">
-        <div class="project-ovesrview-image">
-          <div class="strava-embed-placeholder"
-               data-embed-type="activity"
-               data-embed-id="15919877677"
-               data-style="standard"
-               data-from-embed="false"></div>
-        </div>
-        <div class="body-text chart-explainer">
-          <strong>Strava Activity</strong>
-          - Through disciplined stopping and starting the hiking activity on my Garmin as well as ensuring that it never ran out of
-          battery, I was able to maintain a single activity along the trek.
-        </div>
-      </article>
+    <div class="project-overview-image" data-aos="fade-up">
+      <div class="strava-embed-placeholder"
+           data-embed-type="activity"
+           data-embed-id="15919877677"
+           data-style="standard"
+           data-from-embed="false"></div>
+    </div>
+
+    <div class="body-text" data-aos="fade-up">
+      <strong>Strava activity.</strong>
+      Through some very disciplined stopping and starting the hiking activity on my Garmin as well as always ensuring a decent charge, I managed to keep 
+      the entire trek in a single activity.
     </div>
   </div>
 </section>
 
+<!-- Include once near the end of <body> -->
 <script src="https://strava-embeds.com/embed.js" defer></script>
 
 
