@@ -150,3 +150,8 @@ iframe {
     padding-right: max(2rem, calc((100vw - 1600px) / 2));
   }
 }
+
+#strava .project-overview-image {
+  display: grid;        /* or: display: flex; justify-content: center; */
+  place-items: center;
+}
