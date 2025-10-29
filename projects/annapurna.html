@@ -103,20 +103,23 @@
     </section>
 
 
-<!-- Map styles -->
 <!-- Interactive 3D Map -->
 <section class="mapwrap">
   <div class="project-details-content">
     <h2 class="subheader-text" data-aos="fade-up">Interactive 3D Map</h2>
-    <div class="body-text" data-aos="fade-up">
-      This is a 3D, browser-based map of a section of the Annapurna Circuit, built with MapLibre GL JS, the open-source WebGL engine for vector tiles. 
-      It overlays the route we walked on shaded terrain and adds a point layer for each village where we stayed.
-    </div>
-
-    <div id="map" class="map-canvas"></div>
-  </div>
-</section>
-
+        <div class="body-text" data-aos="fade-up">
+            This is a 3D, browser-based map of a section of the Annapurna Circuit, built with MapLibre GL JS, the open-source WebGL engine for vector tiles. 
+            It overlays the route we walked on shaded terrain and adds a point layer for each village where we stayed. With terrain enabled you can tilt, rotate 
+            and zoom to read the relief properly, see ridgelines and valleys, and pick out details like contour spacing, switchbacks and river beds. 
+            <br><br>  
+            It is granular enough to show the little spur to Ice Lake where Spike and I held a stone-skipping contest, the zigzag ascent to Thorung La Pass, 
+            and the contemplatory-shuffle along the riverbed near Jomsom when we realised we would need to wade a stream and get our boots soaked. It captures 
+            the wrong turns and hiccups as well as the big views. 
+        </div>
+    <section class="mapwrap" style="margin:2rem 0">
+      <div id="map" style="height:60vh;min-height:420px;border-radius:8px"></div>
+    </section>
+    
     <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
     <script>
       const MAPTILER_KEY = "blcNGuPM8YRJyLOpy5al";
