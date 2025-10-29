@@ -155,20 +155,3 @@ iframe {
   display: grid;        /* or: display: flex; justify-content: center; */
   place-items: center;
 }
-
-.map-details,
-.mapwrap,
-.body-text {                       /* ensure text follows same width */
-  max-width: 920px;
-  margin: 2rem auto;               /* centres and spaces consistently */
-  padding: 0 1rem;
-  text-align: left;
-}
-
-/* Map sizing stays fluid inside the wrapper */
-#map {
-  width: 100%;
-  height: 60vh;
-  min-height: 420px;
-  border-radius: 8px;
-}
