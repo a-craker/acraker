@@ -103,9 +103,8 @@
     </section>
 
 
-<!-- Interactive 3D Map -->
-<section class="mapwrap">
-  <div class="project-details-content">
+<!-- Map styles -->
+<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
     <h2 class="subheader-text" data-aos="fade-up">Interactive 3D Map</h2>
         <div class="body-text" data-aos="fade-up">
             This is a 3D, browser-based map of a section of the Annapurna Circuit, built with MapLibre GL JS, the open-source WebGL engine for vector tiles. 
@@ -116,8 +115,8 @@
             and the contemplatory-shuffle along the riverbed near Jomsom when we realised we would need to wade a stream and get our boots soaked. It captures 
             the wrong turns and hiccups as well as the big views. 
         </div>
-    <section class="mapwrap" style="margin:2rem 0">
-      <div id="map" style="height:60vh;min-height:420px;border-radius:8px"></div>
+    <section class="mapwrap">
+      <div id="map"></div>
     </section>
     
     <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>

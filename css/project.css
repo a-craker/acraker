@@ -156,13 +156,17 @@ iframe {
   place-items: center;
 }
 
-.mapwrap { margin: 2rem 0; }
+/* Match project-details-content width */
+.mapwrap {
+  max-width: 800px;
+  margin: 2rem auto;   /* keeps your vertical spacing, centres horizontally */
+  padding: 0 1rem;     /* same side padding as details */
+}
 
-.map-canvas {
+/* Make the map fill the wrapper’s width */
+#map {
   width: 100%;
-  height: 60vh;        /* or 420px */
+  height: 60vh;
   min-height: 420px;
   border-radius: 8px;
-  overflow: hidden;
-  position: relative;  /* important for controls */
 }
