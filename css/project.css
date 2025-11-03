@@ -171,3 +171,7 @@ iframe {
   min-height: 420px;
   border-radius: 8px;
 }
+
+
+.bullets { margin: 0 0 1rem 1.25rem; }
+.bullets li { margin-bottom: 0.25rem; }
